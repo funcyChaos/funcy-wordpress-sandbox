@@ -9,8 +9,8 @@ add_action('init', function(){
 	register_taxonomy(
 		'custom_taxonomy',
 		'custom_post_type',
-		array(
+		[
 			'label' => 'Custom Taxonomy'
-		)
+		]
 	);
 });
