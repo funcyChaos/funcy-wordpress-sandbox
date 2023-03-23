@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Add admin-ajax "action" or endpoint. Arguably more secure than a REST endpoint.
+ * Add admin-ajax 'action' or endpoint. Arguably more secure than a REST endpoint.
  * The url for this endpoint is /wp-admin/admin-ajax.php?action=admin-ajax
  */
 
@@ -28,14 +28,25 @@ add_action('rest_api_init', function(){
 	register_rest_route('api-endpoint', '/endpoint/(?P<param>\d+)', [
 		[
 			'methods'	=> 'GET',
-			'callback'	=> function ($req){
-				return ['response'=>'GET successful', 'request'=>$req['param']];
+			'callback'	=> function (WP_REST_Request $req){
+				return [
+					'response'	=> 'GET successful',
+					'request'		=> $req['param'],
+				];
 			}
 		],
 		[
 			'methods'	=> 'POST',
-			'callback'	=> function ($req){
-				return ['response'=>'POST successful', 'request'=>$req['param']];
+			'callback'	=> function (WP_REST_Request $req){
+				return [
+					'response'	=> 'POST successful',
+					'request'		=> $req['param'],
+					'json'			=> $req->get_param('json'),
+					'nonce'			=> $req->get_header('X-WP-Nonce'),
+				];
+			},
+			'permission_callback' => function(){
+				return current_user_can('edit_others_posts');
 			}
 		]
 	]);
