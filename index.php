@@ -1,5 +1,4 @@
 <script>
-	console.log('<?=home_url()?>')
 	fetch('<?=home_url()?>/wp-json/api-endpoint/endpoint/5',{
 		method: 'POST',
 		headers: {
