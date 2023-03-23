@@ -22,7 +22,7 @@ add_action('wp_ajax_nopriv_admin-ajax', function(){
  */
 
 add_action('rest_api_init', function(){
-	register_rest_route('api-endpoint', '/endpoint/(?P<param>\d+)', array(
+	register_rest_route('api-endpoint', '/endpoint/(?P<param>\d+)', [
 		[
 			'methods'	=> 'GET',
 			'callback'	=> function ($req){
@@ -35,5 +35,5 @@ add_action('rest_api_init', function(){
 				return ['response'=>'POST successful', 'request'=>$req['param']];
 			}
 		]
-	));
+	]);
 });
