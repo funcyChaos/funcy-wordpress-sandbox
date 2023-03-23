@@ -7,13 +7,16 @@
 
 add_action('wp_ajax_admin-ajax', function(){
 	if(!wp_verify_nonce($_REQUEST['nonce'], 'super_secret_code')){
-		exit(json_encode(['response'=>'bad nonce']));
+		wp_send_json(['response'=>'bad nonce']);
+		wp_die();
 	}
-	echo json_encode(['response'=>'success']);
-	die();
-});	
+	wp_send_json(['response'=>'success']);
+	wp_die();
+});
+
 add_action('wp_ajax_nopriv_admin-ajax', function(){
-	echo json_encode(['response'=>'nopriv']);
+	wp_send_json(['response'=>'nopriv']);
+	wp_die();
 });
 
 /**
