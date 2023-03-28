@@ -51,3 +51,5 @@ add_action('rest_api_init', function(){
 		]
 	]);
 });
+
+wp_enqueue_script('wp-api');
