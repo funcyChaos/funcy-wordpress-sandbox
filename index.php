@@ -1,5 +1,5 @@
 <script>
-	fetch('<?=home_url()?>/wp-json/api-endpoint/endpoint/5',{
+	fetch('<?=home_url()?>/wp-json/api-endpoint/v1/endpoint/5',{
 		method: 'POST',
 		headers: {
       'Content-Type': 'application/json',
