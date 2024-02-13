@@ -1,10 +1,10 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<form>
+<form id="the_form">
 	<div class="g-recaptcha" data-sitekey="6LduTmspAAAAACnlnH2_rBd_AT49bjJiqmJp4ylt" data-callback="recaptchaValidate"></div>
 	<button class="" id="submit_button" type="submit">Submit</button>
 </form>
 <script>
-	const form = document.getElementById('quote_form')
+	const form = document.getElementById('the_form')
 	form.addEventListener('submit', (event)=>{
 		event.preventDefault()
 		const formData = new FormData(form)
