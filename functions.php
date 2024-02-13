@@ -1,7 +1,7 @@
 <?php
 
 add_action('rest_api_init', function(){
-	register_rest_route('get-a-quote/v1', '/form-request', [
+	register_rest_route('important-system/v1', '/form-request', [
 		[
 			'methods'	=> 'POST',
 			'callback'	=> function (WP_REST_Request $req){

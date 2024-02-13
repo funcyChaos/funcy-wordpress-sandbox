@@ -12,7 +12,7 @@
 		formData.forEach((value, key)=>{
 			jsonData[key] = value
 		})
-		fetch('<?=home_url()?>/wp-json/get-a-quote/v1/form-request',{
+		fetch('<?=home_url()?>/wp-json/important-system/v1/form-request',{
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
