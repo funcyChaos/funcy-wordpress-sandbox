@@ -29,7 +29,7 @@ add_action('rest_api_init', function(){
 	register_rest_route('api-endpoint/v1', '/endpoint/(?P<param>\d+)', [
 		[
 			'methods'	=> 'GET',
-			'callback'	=> function (WP_REST_Request $req){
+			'callback'	=> function(WP_REST_Request $req){
 				return [
 					'response'	=> 'GET successful',
 					'request'		=> $req['param'],
@@ -38,7 +38,7 @@ add_action('rest_api_init', function(){
 		],
 		[
 			'methods'	=> 'POST',
-			'callback'	=> function (WP_REST_Request $req){
+			'callback'	=> function(WP_REST_Request $req){
 				return [
 					'response'	=> 'POST successful',
 					'request'		=> $req['param'],
