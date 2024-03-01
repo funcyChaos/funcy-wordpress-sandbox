@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Add admin-ajax 'action' or endpoint. Arguably more secure than a REST endpoint.
+ * Add admin-ajax 'action' or endpoint.
  * The url for this endpoint is /wp-admin/admin-ajax.php?action=admin-ajax
  */
 
@@ -20,8 +20,9 @@ add_action('wp_ajax_nopriv_admin-ajax', function(){
 });
 
 /**
- * Add REST API endpoint. Supposed to be faster than admin-ajax, but the last known benchmark, at time of writing, says it is actually slower
- * This route is available at /wp-json/api-endpoint/v1 and /wp-json/api-endpoint/v1/endpoint/{param}
+ * Add REST API endpoint. Supposed to be faster than admin-ajax, but the last known benchmark, at time of writing, says it is actually slower.
+ 
+ * This route works out to /wp-json/api-endpoint/v1/endpoint/{param}
  */
 
 add_action('rest_api_init', function(){
